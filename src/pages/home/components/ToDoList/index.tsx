@@ -2,7 +2,7 @@
  * @Author: Liny 1343948723@qq.com
  * @Date: 2024-12-10 15:59:37
  * @LastEditors: Liny 1343948723@qq.com
- * @LastEditTime: 2024-12-11 10:55:25
+ * @LastEditTime: 2024-12-11 17:05:13
  * @FilePath: /testProject/src/pages/home/components/ToDoList/index.tsx
  * @Description: ToDoList基础实现
  */
@@ -47,7 +47,6 @@ const ToDoList = () => {
 
     return (
         <div className='w-full'>
-            {/* <h3>my ToDoList</h3> */}
             <InputOfToDo inputValue={inputValue} setInputValue={setInputValue} onAdd={onAdd} />
             <ListOfToDo
                 listsData={listsData}

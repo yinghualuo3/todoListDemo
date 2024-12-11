@@ -1,3 +1,11 @@
+/*
+ * @Author: Liny 1343948723@qq.com
+ * @Date: 2024-12-02 01:33:51
+ * @LastEditors: Liny 1343948723@qq.com
+ * @LastEditTime: 2024-12-11 17:06:16
+ * @FilePath: /todoListDemo/src/pages/home/index.tsx
+ * @Description: 首页
+ */
 import { Tabs, TabsProps } from 'antd';
 import React from 'react';
 import ToDoList from './components/ToDoList';
@@ -22,7 +30,7 @@ const items: TabsProps['items'] = [
   },
 ];
 
-const Home: React.FC = () => {
+const Home: React.FC = () => {  
 
   return (
     <div className="w-[90vw] h-full px-12">
