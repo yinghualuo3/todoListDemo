@@ -1,6 +1,5 @@
 import { Tabs, TabsProps } from 'antd';
 import React from 'react';
-// import { useNavigate } from 'react-router-dom';
 import ToDoList from './components/ToDoList';
 import TodoProvider from './components/TodoContext';
 import TodoJotai from './components/TodoJotai';
@@ -24,11 +23,6 @@ const items: TabsProps['items'] = [
 ];
 
 const Home: React.FC = () => {
-  // const navigate = useNavigate();
-
-  // const onClick = () => {
-  //     navigate('/')
-  // }
 
   return (
     <div className="w-[90vw] h-full px-12">

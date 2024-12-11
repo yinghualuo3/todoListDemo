@@ -38,13 +38,13 @@ const TodoProvider = () => {
     const [listsData, setListsData] = useState<ToDoItem[]>([]);
 
     const onAdd = () => {
-        inputValue.trim() === '' && message.warning('请输入任务内容')
-        if (inputValue.trim() !== '') {
-            console.log(inputValue);
-            setListsData([{ id: nextId.current, text: inputValue, completed: false }, ...listsData]);
-            setInputValue('');
-            nextId.current += 1;
+        if (inputValue.trim() === '') {
+            message.warning('请输入任务内容')
+            return
         }
+        setListsData([{ id: nextId.current, text: inputValue, completed: false }, ...listsData]);
+        setInputValue('');
+        nextId.current += 1;
     }
 
     const onChangeCheck = (id: number) => {
@@ -68,10 +68,11 @@ const TodoProvider = () => {
 
 export default TodoProvider;
 
+
 export const useTodoContext = () => {
     const context = useContext(TodoContext);
     if (!context) {
-        throw new Error('');
+        throw new Error('useTodoContext must be used within a TodoProvider');
     }
 
     return context;

@@ -11,7 +11,7 @@ import { Checkbox, List } from 'antd';
 import cx from 'classnames';
 import { memo } from 'react';
 
-// 超过一定高度滚动条展示?勾选后checkbox置灰?
+// 超过一定高度滚动条展示?
 
 interface IProps {
     listsData: any[],

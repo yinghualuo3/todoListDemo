@@ -1,3 +1,11 @@
+/*
+ * @Author: Liny 1343948723@qq.com
+ * @Date: 2024-12-11 15:08:15
+ * @LastEditors: Liny 1343948723@qq.com
+ * @LastEditTime: 2024-12-11 16:56:56
+ * @FilePath: /todoListDemo/src/pages/home/components/TodoJotai/JotaiInput/index.tsx
+ * @Description: JotaiInput组件
+ */
 import { Button, Input, Space } from 'antd';
 import { memo } from 'react';
 import useTodoAtoms from '../useTodoAtoms';
@@ -9,7 +17,6 @@ interface IProps {
 }
 
 const JotaiInput = () => {
-    // const { inputValue, setInputValue, onAdd } = props;
     const { inputValue, setInputValue, onAdd } = useTodoAtoms();
 
     const onKeyDown = (e: any) => {

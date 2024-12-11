@@ -1,10 +1,17 @@
+/*
+ * @Author: Liny 1343948723@qq.com
+ * @Date: 2024-12-11 15:07:28
+ * @LastEditors: Liny 1343948723@qq.com
+ * @LastEditTime: 2024-12-11 16:56:48
+ * @FilePath: /todoListDemo/src/pages/home/components/TodoJotai/JotaiList/index.tsx
+ * @Description: JotaiList组件
+ */
+
 import { CloseOutlined } from '@ant-design/icons';
 import { Checkbox, List } from 'antd';
 import cx from 'classnames';
 import { memo } from 'react';
 import useTodoAtoms from '../useTodoAtoms';
-
-// 超过一定高度滚动条展示?勾选后checkbox置灰?
 
 interface IProps {
     listsData: any[],
