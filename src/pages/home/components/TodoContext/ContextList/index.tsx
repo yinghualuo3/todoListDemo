@@ -18,16 +18,17 @@ const ContextList = () => {
 
     return (
         <List
-            className='mt-8 border border-blue-300 rounded-md'
+            className='mt-8'
             locale={{ emptyText: '暂无待办事项' }}
             dataSource={listsData}
             renderItem={(item) => (
                 <List.Item
+                    className='hover:bg-blue-50 rounded-md'
                     actions={[
                         <CloseOutlined onClick={() => onDel(item.id)} />
                     ]}
                 >
-                    <Checkbox className={cx('', { 'line-through text-gray-400': item.completed })} checked={item.completed} onChange={() => onChangeCheck(item.id)}>
+                    <Checkbox className={cx('', { 'line-through text-gray-400 ': item.completed })} checked={item.completed} onChange={() => onChangeCheck(item.id)}>
                         {item.text}
                     </Checkbox>
                 </List.Item>

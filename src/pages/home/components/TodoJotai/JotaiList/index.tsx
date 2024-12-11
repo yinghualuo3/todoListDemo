@@ -1,15 +1,8 @@
-/*
- * @Author: Liny 1343948723@qq.com
- * @Date: 2024-12-10 17:06:58
- * @LastEditors: Liny 1343948723@qq.com
- * @LastEditTime: 2024-12-11 11:01:46
- * @FilePath: /testProject/src/pages/components/ListByOfDo/index.tsx
- * @Description: List组件
- */
 import { CloseOutlined } from '@ant-design/icons';
 import { Checkbox, List } from 'antd';
 import cx from 'classnames';
 import { memo } from 'react';
+import useTodoAtoms from '../useTodoAtoms';
 
 // 超过一定高度滚动条展示?勾选后checkbox置灰?
 
@@ -19,17 +12,18 @@ interface IProps {
     onDel: (id: number) => void
 }
 
-const ListOfToDo = (props: IProps) => {
-    const { listsData, onChangeCheck, onDel } = props;
+const JotaiList = () => {
+    const { listsData, onChangeCheck, onDel } = useTodoAtoms()
 
     return (
         <List
-            className='mt-8'
+            className='mt-8 rounded-md'
             locale={{ emptyText: '暂无待办事项' }}
             dataSource={listsData}
             renderItem={(item) => (
                 <List.Item
-                    className='hover:bg-gray-50 rounded-md'
+                className='hover:bg-blue-50 rounded-md'
+                    
                     actions={[
                         <CloseOutlined onClick={() => onDel(item.id)} />
                     ]}
@@ -44,4 +38,4 @@ const ListOfToDo = (props: IProps) => {
 
 }
 
-export default memo(ListOfToDo);
+export default memo(JotaiList);
