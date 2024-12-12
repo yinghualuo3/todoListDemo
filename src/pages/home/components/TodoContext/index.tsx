@@ -2,17 +2,23 @@
  * @Author: Liny 1343948723@qq.com
  * @Date: 2024-12-11 10:19:41
  * @LastEditors: Liny 1343948723@qq.com
- * @LastEditTime: 2024-12-12 14:50:46
+ * @LastEditTime: 2024-12-12 14:58:00
  * @FilePath: /testProject/src/pages/toDoListOfContext/index.tsx
  * @Description: TodoProvider容器组件
  */
 import { createContext, useContext } from 'react';
 import ContextInput from './ContextInput';
 import ContextList from './ContextList';
-import { ToDoItem, useValues } from './useContent';
+import { useValues } from './useContent';
+
+export interface ToDoItem {
+    id: number;
+    text: string;
+    completed: boolean;
+}
 
 // 定义context所需的数据类型
-interface TodoContextIProps {
+export interface TodoContextIProps {
     inputValue: string;
     setInputValue: (value: string) => void;
     onAdd: () => void;
@@ -26,7 +32,7 @@ interface TodoContextIProps {
 export const TodoContext = createContext<TodoContextIProps | undefined>(undefined);
 
 const TodoProvider = () => {
-    const values: TodoContextIProps = useValues();
+    const values = useValues();
 
     // 在顶层组件传递数据的位置限制传递的数据必须满足类型TodoContextIProps 必须用Provider包裹
     return (

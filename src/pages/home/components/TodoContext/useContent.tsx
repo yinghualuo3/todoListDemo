@@ -2,20 +2,15 @@
  * @Author: Liny 1343948723@qq.com
  * @Date: 2024-12-12 14:43:43
  * @LastEditors: Liny 1343948723@qq.com
- * @LastEditTime: 2024-12-12 14:45:32
+ * @LastEditTime: 2024-12-12 14:56:48
  * @FilePath: /todoListDemo/src/pages/home/components/TodoContext/useContent.tsx
  * @Description: useContent
  */
 import { message } from "antd";
 import { useRef, useState } from "react";
+import { ToDoItem, TodoContextIProps } from ".";
 
-export interface ToDoItem {
-    id: number;
-    text: string;
-    completed: boolean;
-}
-
-export const useValues = () => {
+export const useValues = (): TodoContextIProps => {
     const nextId = useRef<number>(1);
     const [inputValue, setInputValue] = useState('');
     const [listsData, setListsData] = useState<ToDoItem[]>([]);
