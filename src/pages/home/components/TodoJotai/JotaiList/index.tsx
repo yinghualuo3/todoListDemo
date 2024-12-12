@@ -2,7 +2,7 @@
  * @Author: Liny 1343948723@qq.com
  * @Date: 2024-12-11 15:07:28
  * @LastEditors: Liny 1343948723@qq.com
- * @LastEditTime: 2024-12-11 16:56:48
+ * @LastEditTime: 2024-12-12 10:24:33
  * @FilePath: /todoListDemo/src/pages/home/components/TodoJotai/JotaiList/index.tsx
  * @Description: JotaiList组件
  */
@@ -12,12 +12,6 @@ import { Checkbox, List } from 'antd';
 import cx from 'classnames';
 import { memo } from 'react';
 import useTodoAtoms from '../useTodoAtoms';
-
-interface IProps {
-    listsData: any[],
-    onChangeCheck: (id: number) => void,
-    onDel: (id: number) => void
-}
 
 const JotaiList = () => {
     const { listsData, onChangeCheck, onDel } = useTodoAtoms()
